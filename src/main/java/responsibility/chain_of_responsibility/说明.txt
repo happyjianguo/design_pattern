@@ -1,0 +1,5 @@
+职责链模式(Chain of Responsibility)
+The intend of the Chain of Responsibility pattern is to avoid coupling the sender request
+to its receiver , by giving more than one object a chance to handle the request.
+
+

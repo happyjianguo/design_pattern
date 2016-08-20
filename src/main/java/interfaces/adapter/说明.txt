@@ -1,0 +1,29 @@
+1.Class Adapter.
+  站在client端的角度，你有一个已经实现好的类（ExistingClass），且你有一个Interface或者你可以定义一个Interface，客户端调是调用这个Interface的方法。
+  对于这个ExistingClass你不能去改变他，但是你可以去继承他。
+ TO adapt the ExistingClass to meet the client needs,an NewClass is created that delegates client's request to Exising Class
+ 
+ In a class adapter design, the new adapter class implements the desired interface
+ and subclasses an existing class
+
+ 2.Object Adapter.
+Class Adapter, will not always work, notably when the set of methods that
+you need to adapt is not specified in an interface.
+In such case , you can create an object adapter -- an adapter that uses
+delegation rather than suclassing.
+The NewClass class in order to meet  the needs of the client , it can adapt 
+the ExistingClass class by using an instance of the ExistingClass.
+In general, object adapters partially overcome the problem of
+adapting an object to an interface that is not expressly defined.
+
+3.The difference:
+1)A Class Adapter subclasses an existing class  and implements a target Interface;
+An Object Adapter subclasses a target Class and delegates to an existing class.
+
+2)Object Adapter can adapt more than one class by have it, while Class Adapter can just adapt 
+one class by extends 
+
+3)Object Adapter is more dangerous ,expecially if you don't(or perhaps can't) override
+all the methods that the client might call.
+
+ 
