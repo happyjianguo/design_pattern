@@ -8,3 +8,5 @@ strategy, in separate classes that each implement a common operation.
 
 The Strategy Pattern helps to organize and simplify code by encapsulate 
 different approaches to a problem in different classes.
+
+
