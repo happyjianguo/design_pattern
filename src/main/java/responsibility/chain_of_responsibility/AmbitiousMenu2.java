@@ -1,6 +1,8 @@
 package responsibility.chain_of_responsibility;
 
 import responsibility.chain_of_responsibility.domain.machine.Engineer;
+import responsibility.chain_of_responsibility.domain.machine.MachineComponent;
+import responsibility.chain_of_responsibility.domain.machine.StarPress;
 import responsibility.chain_of_responsibility.domain.machine.Tool;
 import responsibility.chain_of_responsibility.domain.machine.ToolCart;
 import responsibility.chain_of_responsibility.domain.machine.VisualizationItem;
@@ -29,9 +31,24 @@ public class AmbitiousMenu2 {
         return item.getResponsible();
     }
     
+    public Engineer getResponsible(MachineComponent machine) {
+        return machine.getResponsible();
+    }
+    
+    
     public static void main(String[] args) {
         AmbitiousMenu2 menu = new AmbitiousMenu2();
-        menu.getResponsible(new Tool());
-        menu.getResponsible(new ToolCart(new Engineer(1)));
+        
+        Tool tool = new Tool();
+        ToolCart cart = new ToolCart(new Engineer(1));
+        tool.setToolCart(cart);
+        
+        menu.getResponsible(tool);
+        
+        menu.getResponsible(cart);
+        
+        MachineComponent machine = new StarPress(1);
+        menu.getResponsible(machine);
+        
     }
 }
