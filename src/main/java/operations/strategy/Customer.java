@@ -56,7 +56,8 @@ public class Customer {
 
             if (promotedName != null) {
                 Firework f = Firework.lookup(promotedName);
-                if (f != null) return f;
+                if (f != null)
+                    return f;
             }
         } catch (Exception ignored) {
             // If resource missing or it failed to load,
@@ -71,7 +72,8 @@ public class Customer {
         // check spending over the last year
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.YEAR, -1);
-        if (spendingSince(cal.getTime()) > 1000) return (Firework) LikeMyStuff.suggest(this);
+        if (spendingSince(cal.getTime()) > 1000)
+            return (Firework) LikeMyStuff.suggest(this);
 
         // oh well!
         return Firework.getRandom();
@@ -80,7 +82,8 @@ public class Customer {
     /**
      * @return the amount of dough this customer has spent with us since the
      *         provided date.
-     * @param date Since when?
+     * @param date
+     *            Since when?
      */
     public double spendingSince(Date date) {
         return 1000;

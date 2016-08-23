@@ -22,6 +22,8 @@ import java.util.Date;
  * reality, you would replace the Customer class with this one.
  */
 public class Customer2 extends Customer {
+    // An advisor attribute of a Customer object
+    // holds the current choice of the strategy to apply
     private Advisor advisor;
 
     private static PromotionAdvisor promotionAdvisor = new PromotionAdvisor();
@@ -54,13 +56,24 @@ public class Customer2 extends Customer {
 
     /**
      * @return a firework to recommend to this customer. This method is
-     *         refactored to employ the Strategy pattern.
+     *         refactored to employ the Strategy pattern. The refactoring of
+     *         Customer separates the selection of a strategy from the use of
+     *         the strategy
      */
     public Firework getRecommended() {
+        //use the strategy
         Firework recommend = getAdvisor().recommend(this);
         return recommend;
     }
 
+    /**
+     * selection of a strategy
+     * 
+     * The refactored Customer2 class lazy-initializes this attribute with logic
+     * that reflects Oozinoz’s advertising policies
+     * 
+     * @return
+     */
     private Advisor getAdvisor() {
         if (advisor == null) {
             if (promotionAdvisor.hasItem())
@@ -78,7 +91,8 @@ public class Customer2 extends Customer {
     /**
      * @return the amount of money this customer has spent with us since the
      *         provided date.
-     * @param date Since when?
+     * @param date
+     *            Since when?
      */
     public double spendingSince(Date date) {
         return 1000;

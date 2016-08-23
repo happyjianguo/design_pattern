@@ -10,3 +10,20 @@ The Strategy Pattern helps to organize and simplify code by encapsulate
 different approaches to a problem in different classes.
 
 
+2.It is useful to first look at a program that models strategy without applying
+Strategy:
+	First,it's long--so long that comments have to explain its various part.
+Short methods are easy to understand,seldom need explanation.
+    In addition,the geRecommend() method both chooses a strategy and executes it.
+    
+3.You can clean up this code by applying Strategy,to do so , let us 
+  1. Create an interface that defines the strategy operation.
+  2. Implement the interface with classes that represent the each strategy.
+  3. Refactor the code to select and use an instance of the right strategy class.
+  
+4. Define a family of algorithms, encapsulate each one , and make them interchangeable.
+   The Strategy Pattern lets the algorithm vary independently from clients use it.
+   
+5. The Strategy pattern embodies two such principles:
+   encapsulate the concept that varies and program to an interface, not an implementation.
+    
