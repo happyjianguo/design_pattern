@@ -1,9 +1,9 @@
 1.Introduction
-A Strategy is a plan, or approach,for achieving an aim given certain input 
+A Strategy is a plan, or approach, for achieving an aim given certain input 
 conditions.A strategy is thus similar to an algorithm, a procedure that 
 produces an output from a set of inputs.
 
-The intend of Strategy is to encapsulate alternative approaches , or 
+The intend of Strategy is to encapsulate alternative approaches, or 
 strategy, in separate classes that each implement a common operation.
 
 The Strategy Pattern helps to organize and simplify code by encapsulate 
@@ -12,7 +12,7 @@ different approaches to a problem in different classes.
 
 2.It is useful to first look at a program that models strategy without applying
 Strategy:
-	First,it's long--so long that comments have to explain its various part.
+	First, it's long--so long that comments have to explain its various part.
 Short methods are easy to understand,seldom need explanation.
     In addition,the geRecommend() method both chooses a strategy and executes it.
     

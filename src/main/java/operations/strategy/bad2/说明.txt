@@ -1,0 +1,20 @@
+1. You can see the consequences if you tried to implement a new border type—you'd have to1modify JComponent in at least three places:
+ First, you would have to add a new integer value corresponding to your new border type. 
+ Second, you would have to add a case to the switch statement.
+ third, you would have to implement a paintXXXBorder() method,where XXX designates the border type.
+ 
+ Obviously, you won't have much success extending the preceding paintBorder() implementation.
+ Not only would you find it difficult to extend paintBorder() with a new border type,
+ but the JComponent class is not yours to modify in the first place—it's part of the Swing toolkit, 
+ meaning you would have to recompile the class and rebuild the entire toolkit. 
+ You would also have to require your users to use your renegade Swing version instead of the standard version,
+ and you'd have work to do with the next Swing release.
+ Also, because you've added new border-painting functionality to the JComponent class,
+ every Swing component can now access that functionality whether you like it or not—you cannot restrict
+ your new border to a particular component type.
+ 
+ Finally, Swing components would not be extensible if the JComponent class implemented its functionality with switch statements, 
+ as in Example bad2.
+ 
+ 
+ 
