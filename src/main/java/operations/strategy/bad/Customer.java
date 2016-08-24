@@ -1,4 +1,4 @@
-package operations.strategy;
+package operations.strategy.bad;
 
 /*
  * Copyright (c) 2001, 2005. Steven J. Metsker.

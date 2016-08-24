@@ -1,4 +1,4 @@
-package operations.strategy;
+package operations.strategy.good;
 
 /*
  * Copyright (c) 2001, 2005. Steven J. Metsker.
@@ -15,6 +15,8 @@ import interfaces.adapter.object.eg.Firework;
 
 import java.util.Calendar;
 import java.util.Date;
+
+import operations.strategy.bad.Customer;
 
 /**
  * Represents a customer. This class is the refactored strategy class. It

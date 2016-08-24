@@ -1,4 +1,4 @@
-package operations.strategy;
+package operations.strategy.good;
 
 /*
  * Copyright (c) 2001, 2005. Steven J. Metsker.
@@ -12,6 +12,8 @@ package operations.strategy;
  */
 
 import interfaces.adapter.object.eg.Firework;
+import operations.strategy.bad.Customer;
+import operations.strategy.bad.LikeMyStuff;
 
 /**
  * Implement the Advisor interface by relying on the LikeMyStuff engine that

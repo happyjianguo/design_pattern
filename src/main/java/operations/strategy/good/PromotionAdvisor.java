@@ -1,4 +1,4 @@
-package operations.strategy;
+package operations.strategy.good;
 
 /*
  * Copyright (c) 2001, 2005. Steven J. Metsker.
@@ -14,6 +14,8 @@ package operations.strategy;
 import interfaces.adapter.object.eg.Firework;
 
 import java.util.Properties;
+
+import operations.strategy.bad.Customer;
 
 /**
  * Implement the Advisor interface, recommending a currently promoted firework.

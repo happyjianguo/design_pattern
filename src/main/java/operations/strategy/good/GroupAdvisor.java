@@ -1,4 +1,4 @@
-package operations.strategy;
+package operations.strategy.good;
 
 /*
  * Copyright (c) 2001, 2005. Steven J. Metsker.
@@ -11,6 +11,8 @@ package operations.strategy;
  * restriction that you may not claim that you wrote it.
  */
 
+import operations.strategy.bad.Customer;
+import operations.strategy.bad.Rel8;
 import interfaces.adapter.object.eg.Firework;
 
 /**
