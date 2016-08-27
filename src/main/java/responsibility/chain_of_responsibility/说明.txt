@@ -44,4 +44,58 @@ You must do three things to filter a servlet:
 3.Associate the filter and the servlet
 
 
+Typically, request handlers are extensions of a base class
+that maintains a reference to the next handler in the chain, 
+known as the successor. 
+The base class might implement handleRequest() like this:
+
+  public abstract class HandlerBase {
+         ...
+         public void handleRequest(SomeRequestObject sro) {
+            if(successor != null)
+                  successor.handleRequest(sro);
+         }
+   }
+   
+So by default, handlers pass the request to the next handler in the chain.
+A concrete extension of HandlerBase might look like this:
+
+	public class SpamFilter extends HandlerBase {
+	      public void handleRequest(SomeRequestObject mailMessage) {
+	         if(isSpam(mailMessage))   { // If the message is spam
+	            // take spam-related action. Do not forward message.
+	         }
+	         else { // Message is not spam.
+	            super.handleRequest(mailMessage); // Pass message to next filter in the chain.
+	         }
+	      }
+	}
+
+Note the hypothetical email filters discussed above are mutually exclusive:
+Ultimately, only one filter handles a request. You might opt to turn that inside out
+by letting multiple filters handle a single request, which is a better analogy to Unix pipes.
+Either way, the underlying engine is the CoR pattern.
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
