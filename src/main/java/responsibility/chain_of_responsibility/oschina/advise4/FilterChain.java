@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FilterChain implements Filter {
     List<Filter> filters = new ArrayList<Filter>();
-    
+
     private int index = 0;
 
     public FilterChain addFilter(Filter f) {
@@ -14,11 +14,12 @@ public class FilterChain implements Filter {
     }
 
     public void doFilter(Request request, Response response, FilterChain chain) {
-        
-        if (index > chain.filters.size()){
+
+        if (index >= chain.filters.size()) {
             return;
         }
-        chain.doFilter(request, response, chain);
-       
+        Filter f = chain.filters.get(index);
+        index++;
+        f.doFilter(request, response, chain);
     }
 }

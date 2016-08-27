@@ -1,6 +1,6 @@
 package responsibility.chain_of_responsibility.oschina.advise4;
 
-public class HtmlFilter implements Filter {
+public class SmileFilter implements Filter {
 
     /**
      * 现在来看，每个过滤器都持有过滤器链，在处理完request后，调用下一个过滤器，由于方法是栈结构，这样就会形成一个过滤器栈，拥有栈的数据结构特点。
@@ -10,18 +10,15 @@ public class HtmlFilter implements Filter {
      */
     @Override
     public void doFilter(Request request, Response response, FilterChain chain) {
-        String str = request.getRequestStr();
-        
-        str = str.replace("<", "{").replace(">", "}");
+        String str = request.getRequestStr().replace(":)", "^V^");
         System.out.println(str);
-        
         request.setRequestStr(str);
-        
+
         chain.doFilter(request, response, chain);
 
         String resStr = response.getResponseStr();
 
-        System.out.println("html");
+        System.out.println("smile");
 
     }
 
