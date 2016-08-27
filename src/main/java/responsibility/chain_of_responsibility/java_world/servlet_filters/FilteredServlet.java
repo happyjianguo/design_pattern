@@ -1,4 +1,4 @@
-package responsibility.chain_of_responsibility.design_pattern.servlet_filter;
+package responsibility.chain_of_responsibility.java_world.servlet_filters;
 
 import java.io.IOException;
 import java.io.PrintWriter;

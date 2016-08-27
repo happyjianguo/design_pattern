@@ -1,4 +1,4 @@
-n the Java 2 Platform, Enterprise Edition (J2EE)'s early days, 
+in the Java 2 Platform, Enterprise Edition (J2EE)'s early days, 
 some servlet containers provided a handy feature known as servlet chaining,
 whereby one could essentially apply a list of filters to a servlet. 
 Servlet filters are popular because they're useful for 
