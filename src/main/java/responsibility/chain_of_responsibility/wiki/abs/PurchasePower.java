@@ -1,7 +1,6 @@
 package responsibility.chain_of_responsibility.wiki.abs;
 
 import responsibility.chain_of_responsibility.wiki.req.PurchaseRequest;
-
 public abstract class PurchasePower {
     protected static final double BASE = 500;
     protected PurchasePower successor;
