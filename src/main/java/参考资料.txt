@@ -1,0 +1,5 @@
+查看书籍《设计模式》，作者 Erich Gamm，Richard Helm，Ralph Johnson，John Vlissides，最早、最经典的设计模式书籍。
+查看书籍《设计模式解析》，作者 Alan Shalloway，James R.Trott，非常好的书。
+查看书籍《Java 与模式》作者闫宏，唯一用道教思想讲解的设计模式书。
+查看书籍《重构—改善既有代码的设计》作者 Martin Fowler，非常实用的书。
+developerWorks Java 技术专区：这里有数百篇关于 Java 编程各个方面的文章
