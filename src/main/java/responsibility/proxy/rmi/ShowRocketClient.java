@@ -4,6 +4,13 @@ import java.rmi.Naming;
 
 public class ShowRocketClient {
 
+    /**
+     * 1、rmic responsibility.proxy.rmi.RocketImpl
+     * 2、rmiregistry 5000
+     * 3、运行 ShowRocketClient
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         Object obj;
         try {
