@@ -1,0 +1,20 @@
+package responsibility.proxy.rmi;
+
+import java.rmi.Naming;
+
+public class ShowRocketClient {
+
+    public static void main(String[] args) {
+        Object obj;
+        try {
+            obj = Naming.lookup("rmi://localhost:5000/Biggie");
+            Rocket biggie = (Rocket) obj;
+            System.out.println("apogee:" + biggie.getApogee());
+        } catch (Exception e) {
+            System.out.println("Exception while looking up a rocket!");
+            e.printStackTrace();
+        }
+
+    }
+
+}

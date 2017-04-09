@@ -1,4 +1,4 @@
-package responsibility.proxy.exp1;
+package responsibility.proxy.staticc.exp1;
 
 public class RealSubject implements Subject {
 
