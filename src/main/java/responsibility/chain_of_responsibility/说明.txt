@@ -75,27 +75,3 @@ Note the hypothetical email filters discussed above are mutually exclusive:
 Ultimately, only one filter handles a request. You might opt to turn that inside out
 by letting multiple filters handle a single request, which is a better analogy to Unix pipes.
 Either way, the underlying engine is the CoR pattern.
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
