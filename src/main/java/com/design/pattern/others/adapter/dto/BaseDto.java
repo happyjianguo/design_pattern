@@ -1,4 +1,4 @@
-package com.design.pattern.others.dispatcher.dto;
+package com.design.pattern.others.adapter.dto;
 
 import java.io.Serializable;
 

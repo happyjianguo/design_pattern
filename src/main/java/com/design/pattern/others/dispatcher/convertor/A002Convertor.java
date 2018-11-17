@@ -2,7 +2,7 @@ package com.design.pattern.others.dispatcher.convertor;
 
 import org.springframework.stereotype.Service;
 
-import com.design.pattern.others.dispatcher.dto.Order;
+import com.design.pattern.others.dispatcher.domain.Order;
 
 @Service
 public class A002Convertor implements IConvertor {

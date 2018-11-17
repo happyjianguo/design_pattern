@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.design.pattern.others.dispatcher.ConvertorDispatcher;
-import com.design.pattern.others.dispatcher.dto.Order;
+import com.design.pattern.others.dispatcher.domain.Order;
 import com.design.pattern.others.dispatcher.enums.TradeType;
 
 public class TestDispatcher {

@@ -1,5 +1,6 @@
-package com.design.pattern.others.dispatcher.dto;
+package com.design.pattern.others.adapter.domain;
 
+import com.design.pattern.others.adapter.dto.BaseDto;
 
 public class Order extends BaseDto {
 
