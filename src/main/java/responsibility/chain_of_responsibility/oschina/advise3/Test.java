@@ -7,7 +7,9 @@ public class Test {
 
         FilterChain chain = new FilterChain();
         
-        chain.addFilter(new HtmlFilter()).addFilter(new SensitivityFilter()).addFilter(new SmileFilter());
+        chain.addFilter(new HtmlFilter())
+             .addFilter(new SensitivityFilter())
+             .addFilter(new SmileFilter());
 
         MsgProcessor pro = new MsgProcessor();
         pro.setChain(chain);

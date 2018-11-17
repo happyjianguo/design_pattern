@@ -8,7 +8,10 @@ public class Test {
         System.out.println(str);
 
         FilterChain chain = new FilterChain();
-        chain.addFilter(new HtmlFilter()).addFilter(new SmileFilter()).addFilter(new SensitivityFilter());
+        
+        chain.addFilter(new HtmlFilter())
+             .addFilter(new SmileFilter())
+             .addFilter(new SensitivityFilter());
 
         Request req = new Request();
         req.setRequestStr(str);

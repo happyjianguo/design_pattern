@@ -1,4 +1,4 @@
-package responsibility.chain_of_responsibility.oschina.advise1;
+package responsibility.chain_of_responsibility.oschina.advise0;
 
 public class Test {
     public static void main(String[] args) {
@@ -7,6 +7,7 @@ public class Test {
         
         MsgProcessor processor = new MsgProcessor();
         processor.setMsg(str);
+        
         str = processor.process();
         
         System.out.println(str);
