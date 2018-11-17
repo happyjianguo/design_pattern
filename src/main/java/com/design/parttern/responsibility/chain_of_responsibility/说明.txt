@@ -1,0 +1,77 @@
+职责链模式(Chain of Responsibility)
+Introduction：
+The Chain of Responsibility pattern uses a chain of objects to handle a request,
+which typically an event. Objects in the chain forward the request along the chain 
+until one of the objects handle the event.Processing stops after an event is handled.
+
+The intend:
+1.The intend of the Chain of Responsibility pattern is to avoid coupling the sender request
+to its receiver , by giving more than one object a chance to handle the request.Chain the 
+receiving object and pass the request along the chain until an object handles it.
+
+2.The intend of the Chain of Responsibility is to relieve callers from knowing which object
+can handle a request.
+
+Summary:
+1.The Chain of Responsibility helps to simplify client code when it's not obvious which object
+in a group should handle the request.
+
+2.With the classic CoR pattern, one or none of the objects in the chain handles the event;
+if an object doesn't handle the event, it forwards it to the next object in the chain.
+
+
+
+Client----request-->>>>handler1-----request-->>>handler2--->>>handler n.
+
+
+The Chain of Responsibility is applicable if:
+1.You want to decouple a request's sender and the receiver.
+2.Multiple objects,determined at runtime ,are candidates to handle the request.
+3.You don't want to specify handlers explicitly in your code.
+
+If you use the CoR pattern,remember:
+1.Only one object in the chain handles the request.
+2.Some request might not get handled.
+Those restriction,of course, are a classic CoR implementation.In practice,
+those rules are bent; for example, servlet filters are a CoR implementation
+that allows multiple filters to process an HTTP request.
+
+
+A simple Servlet 
+You must do three things to filter a servlet:
+1.Implement a servlet
+2.Implement a filter
+3.Associate the filter and the servlet
+
+
+Typically, request handlers are extensions of a base class
+that maintains a reference to the next handler in the chain, 
+known as the successor. 
+The base class might implement handleRequest() like this:
+
+  public abstract class HandlerBase {
+         ...
+         public void handleRequest(SomeRequestObject sro) {
+            if(successor != null)
+                  successor.handleRequest(sro);
+         }
+   }
+   
+So by default, handlers pass the request to the next handler in the chain.
+A concrete extension of HandlerBase might look like this:
+
+	public class SpamFilter extends HandlerBase {
+	      public void handleRequest(SomeRequestObject mailMessage) {
+	         if(isSpam(mailMessage))   { // If the message is spam
+	            // take spam-related action. Do not forward message.
+	         }
+	         else { // Message is not spam.
+	            super.handleRequest(mailMessage); // Pass message to next filter in the chain.
+	         }
+	      }
+	}
+
+Note the hypothetical email filters discussed above are mutually exclusive:
+Ultimately, only one filter handles a request. You might opt to turn that inside out
+by letting multiple filters handle a single request, which is a better analogy to Unix pipes.
+Either way, the underlying engine is the CoR pattern.
